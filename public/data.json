@@ -1,0 +1,8 @@
+{
+  "data": {
+    "name": "小满",
+    "age": 28,
+    "url": "https://pinia.vuejs.org/logo.svg",
+    "desc": "<p>我是一个小满</p>"
+  }
+}
