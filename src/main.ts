@@ -1,11 +1,3 @@
-/*
- * @Author: blurryFace9 50992587+jaling9@users.noreply.github.com
- * @Date: 2023-03-23 20:28:01
- * @LastEditors: blurryFace9 50992587+jaling9@users.noreply.github.com
- * @LastEditTime: 2023-04-11 23:54:39
- * @FilePath: \vue3-vite-demo\src\main.ts
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config'
@@ -22,7 +14,7 @@ import 'primeicons/primeicons.css'
 
 import App from './App.vue'
 import router from './router'
-import { createPinia } from 'pinia'
+// import { createPinia } from 'pinia'
 
 import mitt from 'mitt'
 const Mit = mitt()
