@@ -2,20 +2,36 @@
   <h1>父组件</h1>
   <br />
   <propsComponent
-    ref="propsComponent"
+    ref="dataFromDefineExpose"
     @on-click="getName"
     :arr="hah"
     :title="name"
   ></propsComponent>
-  <h3>{{ getName }}</h3>
 </template>
 
 <script setup lang="ts">
 import propsComponent from './components/propsComponent.vue'
-import { ref, reactive } from 'vue'
-const propsComponent = ref<typeof InstanceType>()
-propsComponent.value.open()
-console.log(propsComponent.value.myName)
+import { ref, reactive, onMounted, onBeforeUnmount } from 'vue'
+const dataFromDefineExpose = ref<InstanceType<typeof propsComponent>>()
+
+onMounted(() => {
+  // 发现一个大坑 不能在onMounted外面直接读取dataFromDefineExpose的值
+  // 发现一个大坑 不能在onMounted外面直接读取dataFromDefineExpose的值
+  // 发现一个大坑 不能在onMounted外面直接读取dataFromDefineExpose的值
+  // 发现一个大坑 不能在onMounted外面直接读取dataFromDefineExpose的值
+  // 发现一个大坑 不能在onMounted外面直接读取dataFromDefineExpose的值
+  console.log(dataFromDefineExpose)
+  console.log(dataFromDefineExpose.value?.myName)
+  console.log(dataFromDefineExpose.value?.open())
+})
+//然后就可以读取到了
+console.log(dataFromDefineExpose)
+console.log(dataFromDefineExpose.value?.myName)
+console.log(dataFromDefineExpose.value?.open())
+//父组件能通过defineExpose就能够读取到子组件的属性，或者调子组件的方法
+
+// propsComponent1.value.open()
+// console.log(propsComponent1.value.myName)
 
 const name = 'xiaoman'
 const hah = [1, 2, 3, 4, 5]
